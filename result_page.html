@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="styles_result_page.css">
+</head>
+<body>
+    <div class="result-container">
+        <h1 id="resultHeading"></h1>
+        <p id="resultText"></p>
+        <button onclick="window.location.href='test_page.html'">Take Another Test</button>
+    </div>
+
+    <script>
+        // Get the result and quiz type from URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const result = params.get("result");
+        const quizType = params.get("quizType");
+
+        // Set the heading dynamically based on the quiz type
+        const resultHeading = document.getElementById("resultHeading");
+        if (quizType === "personality") {
+            resultHeading.textContent = "Your Personality Result";
+        } else if (quizType === "compatibility") {
+            resultHeading.textContent = "Your Compatibility Result";
+        }
+
+        // Set the result text
+        if (result) {
+            document.getElementById("resultText").textContent = result;
+        }
+    </script>
+</body>
+</html>

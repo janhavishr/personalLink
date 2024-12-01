@@ -1,0 +1,154 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff6a00, #ffb03b, #ff6a00);
+    background-size: 300% 300%;
+    animation: gradientAnimation 6s ease infinite;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animating Background Gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Content Section */
+.content {
+    text-align: center;
+    max-width: 700px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+h1 span {
+    color: #ff6a00;
+    text-transform: uppercase;
+}
+
+/* Description Paragraph Styling */
+.description {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.motto {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #ffb03b;
+    letter-spacing: 1px;
+}
+
+/* Button Styling */
+.get-started-btn {
+    background: #ffb03b;
+    color: #333;
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 178, 59, 0.5);
+}
+
+.get-started-btn:hover {
+    background-color: #ff6a00;
+    transform: scale(1.1);
+}
+
+.get-started-btn:active {
+    transform: scale(0.95);
+}
+
+/* Adding Cool Hover Animations */
+.get-started-btn:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Pulse Effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+    }
+
+    .motto {
+        font-size: 1.3rem;
+    }
+
+    .get-started-btn {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+    }
+}

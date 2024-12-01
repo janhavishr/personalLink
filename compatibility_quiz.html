@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compatibility Quiz - PersonaLink</title>
+    <link rel="stylesheet" href="styles_quiz_page.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Test Your Compatibility</h2>
+        <form id="compatibilityQuizForm">
+            <label>1. Do you prefer working in teams?</label><br>
+            <input type="radio" name="work_q1" value="yes"> Yes
+            <input type="radio" name="work_q1" value="no"> No<br><br>
+
+            <label>2. Do you value long-term relationships?</label><br>
+            <input type="radio" name="partner_q1" value="yes"> Yes
+            <input type="radio" name="partner_q1" value="no"> No<br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('compatibilityQuizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const workQ1 = document.querySelector('input[name="work_q1"]:checked');
+            const partnerQ1 = document.querySelector('input[name="partner_q1"]:checked');
+
+            let result = '';
+            if (workQ1.value === 'yes') {
+                result = 'You are more compatible with work environments!';
+            } else if (partnerQ1.value === 'yes') {
+                result = 'You are more compatible with personal relationships!';
+            } else {
+                result = 'You are balanced between work and personal relationships!';
+            }
+
+            window.location.href = `result_page.html?result=${encodeURIComponent(result)}&quizType=compatibility`;
+        });
+    </script>
+</body>
+</html>
